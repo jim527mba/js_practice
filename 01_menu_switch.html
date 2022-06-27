@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu list</title>
+</head>
+<style>
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display:
+            block;
+    }
+</style>
+
+<body>
+    <a href="javascript:;" id="btn-nav-toggle" class="icon-menu"><img src="https://via.placeholder.com/150" alt=""></a>
+    <nav id="primary-navigation">
+        <ul>
+            <li><a href=""><img src="https://via.placeholder.com/75" alt=""></a></li>
+            <li><a href=""><img src="https://via.placeholder.com/75" alt=""></a></li>
+            <li><a href=""><img src="https://via.placeholder.com/75" alt=""></a></li>
+            <li><a href=""><img src="https://via.placeholder.com/75" alt=""></a></li>
+        </ul>
+    </nav>
+
+    <!-- <ul>
+        <li>test</li>
+    </ul> -->
+
+    <script>
+        document.getElementById('btn-nav-toggle').addEventListener('click', openNav)
+        console.log('點擊打開監控台')
+        function openNav() {
+            if (document.getElementById('primary-navigation').classList.contains('active') == true) { document.getElementById('primary-navigation').classList.remove('active') }
+            else {
+                document.getElementById('primary-navigation').classList.add('active')
+            }
+        } 
+    </script>
+</body>
+
+</html>
