@@ -16,6 +16,13 @@
         display:
             block;
     }
+
+    ul,
+    li {
+        list-style-type: none;
+    }
+
+
 </style>
 
 <body>
@@ -34,12 +41,15 @@
     </ul> -->
 
     <script>
-        document.getElementById('btn-nav-toggle').addEventListener('click', openNav)
+        let PmyNvgn = document.getElementById('primary-navigation')
+        let BtnNavT = document.getElementById('btn-nav-toggle')
+
+        BtnNavT.addEventListener('click', openNav)
         console.log('點擊打開監控台')
         function openNav() {
-            if (document.getElementById('primary-navigation').classList.contains('active') == true) { document.getElementById('primary-navigation').classList.remove('active') }
+            if (PmyNvgn.classList.contains('active') == true) { PmyNvgn.classList.remove('active') }
             else {
-                document.getElementById('primary-navigation').classList.add('active')
+                PmyNvgn.classList.add('active')
             }
         } 
     </script>

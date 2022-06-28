@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modal</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        .modal-wrapper {
+            position: fixed;
+            background-color: green;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .modal-wrapper.active {
+            display: block;
+        }
+
+        .modal-content {
+            position: absolute;
+            width: 80%;
+            max-width: 600px;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            background-color: blue;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center
+            ;
+
+        }
+
+        .btn-close{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="javascript:;"onclick="openmodal();" id=""open-modal></a>
+    <div class="modal-wrap">
+        <div id="btn-close-switch" class="modal-content">廣告區塊</div>
+    </div>
+    </modal-wrapper>
+
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable test</title>
+</head>
+
+<body>
+    <script>
+        'use strict' //嚴謹模式
+        //var num = 1 //定義箱子（變數）
+        //var num = 2 //錯誤無報錯
+        //console.log(num)
+
+        // alert('彈出視窗')
+
+        let box = 'test' //用let定義box
+        box = 'hello world' //替換成...
+
+        const account = 'Jim'
+        //用const定義account
+        // account = 'Jim Huang'
+
+        let birthday = '0527'
+        let name = '黃之均'
+        name = '均哥'
+        let x = 5
+        let y = 27
+
+        console.log(box)
+        console.log(account)
+        console.log(birthday)
+        //字串相加
+        console.log("姓名" + name)
+        console.log(x / y)
+        console.log(`我的名字是${name}，我的生日是${birthday}`)
+
+        // 單一條件篩選
+        let age = 27
+        if (age >= 18) {
+            console.log(`年齡為${age}，可以喝酒！`)
+        } else
+            console.log(`年齡為${age},不可以喝酒！`)
+
+        // 多重條件篩選
+        let password = '1234'
+        let place = 'taichung'
+        let price = '10% off'
+        let link = 'http://google.com.tw/ticket.html'
+
+        if (account == "Jim" && password == '1234' && place == 'taipei') { console.log('log successful') }
+        else { console.log('try again!') }
+
+        if (age <= '18' || age >= '65') { console.log('您適用於優待票價') }
+        else { console.log(`請購買普通票，鏈接為${link}`) }
+
+
+        // 設定條件let
+        // 判斷式
+        // if,則，否則
+
+        // 數字迴圈
+        // let num=3
+        // num=0
+        // console.log('數字是'+num)
+        // num=num+1
+        // // num++
+        // console.log(num)
+
+        // while迴圈
+        // while (num <= 10) {
+        //     num++
+        //     console.log(num)
+        // }
+
+        // 九九乘法表
+        // let num=1
+        // let num2=1
+        // while(num=1){
+        //     num++
+        //     console.log(num*num2)
+        // }
+
+        // for迴圈(i=index)
+        for (let i = 0; i < 20; i++) { console.log('數字', i) }
+        for (let i = 20; i > 10; i--) { console.log('數字', i) }
+
+        // 陣列
+        let students = ['jim', 'james', 'iverson']
+        console.log(students[0])
+        console.log(students[1])
+        console.log(students[2])
+        console.log(students[3])
+
+        // 陣列總長度
+        console.log('名單人員總數：', students.length)
+
+        for (
+            let i = 0; i < students.length; i++) { console.log(`學號:${i + 1},學生列表:${students[i]}`) }
+        //for end
+
+        let i = 0
+        console.log(`第${i + 1}個學生是${students[i]}`)
+
+        // 物件
+        let pet = {
+            name: '小白',
+            age: 3,
+            color: 'white',
+            bark: function () { alert('汪汪!') }
+        }
+        console.log(pet.name,pet.age,pet.color)
+
+
+
+
+    </script>
+</body>
+
+</html>
