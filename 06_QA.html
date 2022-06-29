@@ -22,13 +22,22 @@
             /* transform: opacity .4s, transform .5s; */
         }
 
-        .question-content.active .icon-arrow {
-            transform: rotate(180deg);
+        .answer {
+            display: none;
+            /* opacity: 0; */
+            /* height: 0; */
+            /* transition: opacity .4S, transform .5S; */
         }
 
         .question-content.active .answer {
             display: block;
+            /* transition-delay: 1s; */
+            /* opacity: 1; */
             /* transform: opacity .4s, transform .5s; */
+            /* opacity: 1;
+            /* height: auto; */
+            /* transition: all 10s; */
+            /* transform: none; */
         }
 
         .icon-arrow {
@@ -44,8 +53,8 @@
             text-align: center;
         }
 
-        .answer {
-            display: none;
+        .question-content.active .icon-arrow {
+            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -80,6 +89,7 @@
         $('.question-content').on('click', function () {
             $(this).toggleClass('active') // 選取目標對象後，反復增加其效果（CSS自定）
             $(this).siblings().removeClass('active') //選取目標對象後，其他子層移除效果
+            // $(this).find('.answer').stop().slideToggle()
         }) //.question-content end
 
     </script>

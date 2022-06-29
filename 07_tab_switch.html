@@ -30,7 +30,28 @@
 
     .tab-content {
         display: none;
-    }
+        border: 2px solid orangered;
+        background-color: antiquewhite;
+        width: 100%;
+      }
+      .tab-content>img{
+        margin: 0;
+        /* display: flex;
+        flex-wrap: wrap; */
+      }
+      .tab-content .row{
+        margin: 10px;
+        display: flex;
+        width: 100%;
+      }
+
+      .tab-content img{
+        width: 50%;
+      }
+
+      .img-description{
+        width: 50%;
+      }
 
     .tab-content.active {
         display: block;
@@ -39,7 +60,7 @@
 
 <body>
     <h1>TAB SWITCH</h1>
-    <h3>標簽切換區塊</h3>
+    <h3>利用標簽切換、顯示區塊</h3>
     <!-- .tab-link>a[hre="#tab$"]*3 -->
     <!-- #tab${content}*3 -->
     <div class="tab-link">
@@ -48,7 +69,18 @@
         <a href="#tab3" class="">商品評價</a>
     </div>
 
-    <div id="tab1" class="tab-content">内容1</div>
+    <div id="tab1" class="tab-content">
+        <div class="row">
+            <img src="/images/gaoduan (Copy).jpg" alt="">
+            <p class="img-description">這種不可避免的衝突下，我們必須解決這個問題。在人類的歷史中，我們總是盡了一切努力想搞懂高端產品。
+            </p>
+
+        </div>
+        <div class="row">
+            <img src="/images/xiaofei (Copy).jpg" alt="">内容2
+        </div>
+        
+    </div>
     <div id="tab2" class="tab-content">内容2</div>
     <div id="tab3" class="tab-content">内容3</div>
 
@@ -57,7 +89,8 @@
    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
    <script>
-    $('.tab-link>a').on('click',function(){
+    $('.tab-link>a').on('click',function(e){
+        e.preventDefault()
         $(this).addClass('active')
         $(this).siblings().removeClass('active')
         // console.log($(this).attr('href'))
