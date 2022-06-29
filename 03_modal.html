@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>modal</title>
     <style>
@@ -13,11 +12,12 @@
 
         .modal-wrapper {
             position: fixed;
-            background-color: green;
+            background-color: rgba(0, 0, 0, 0.6);
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
+            display: none;
         }
 
         .modal-wrapper.active {
@@ -31,33 +31,66 @@
             left: 50%;
             top: 50%;
             transform: translateX(-50%) translateY(-50%);
-            background-color: blue;
-            color: white;
+            background-color: #fff;
             padding: 30px;
             border-radius: 10px;
-            text-align: center;
-
         }
 
         .btn-close {
             position: absolute;
-            right: 10px;
-            top: 10px;
+            right: 15px;
+            top: 15px;
             cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <a href="javascript:;" onclick="openmodal();" id="open-modal">打開改版哦</a>
+    <a href="javascript:;" onclick="openModal();" id="open-modal">打開蓋板</a>
     <div class="modal-wrapper">
         <div class="modal-content">
-            <div id="btn-close-switch" class="btn-close">x</div>
+            <div id="btn-close-switch" class="btn-close">X</div>
             廣告區塊
             <br>
+            <a href="index.html">首頁</a>
+            <br>
+            <a href="#">最新排行</a>
+            <br>
+            <a href="#">選我選我</a>
             <br>
         </div>
+    </div>
+    <p>01</p>
+    <p>02</p>
+    <p>03</p>
+    <p>04</p>
+    <p>05</p>
+    <p>06</p>
+    <p>07</p>
+    <p>08</p>
+    <p>09</p>
+    <p>10</p>
 
+    <script>
+        let modalWrapper = document.getElementsByClassName('modal-wrapper')[0]
+        let btnCloseSwitch = document.getElementById('btn-close-switch')
+
+        btnCloseSwitch.addEventListener('click', closeModal)
+        modalWrapper.addEventListener('click', closeModal)
+
+        function openModal() {
+            modalWrapper.classList.add('active')
+        } // openModal end
+
+        function closeModal() {
+            modalWrapper.classList.remove('active')
+        } //closeModal end
+
+        function closeModal(i) {
+            if (i.target == this) modalWrapper.classList.remove('active')
+        }
+
+    </script>
 </body>
 
 </html>
