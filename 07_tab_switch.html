@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAB SWITCH</title>
+</head>
+<style>
+    .tab-link {
+        display: flex;
+    }
+
+    .tab-link>a {
+        display: block;
+        width: 31%;
+        margin: 1%;
+        line-height: 40px;
+        color: brown;
+        text-decoration: none;
+        text-align: center;
+        background-color: rgb(212, 212, 212);
+    }
+
+    .tab-link>a.active {
+        background-color: rgb(255, 182, 25);
+        font-weight: bold;
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+    }
+</style>
+
+<body>
+    <h1>TAB SWITCH</h1>
+    <h3>標簽切換區塊</h3>
+    <!-- .tab-link>a[hre="#tab$"]*3 -->
+    <!-- #tab${content}*3 -->
+    <div class="tab-link">
+        <a href="#tab1" class="active">產品資訊</a>
+        <a href="#tab2" class="">商品評價</a>
+        <a href="#tab3" class="">商品評價</a>
+    </div>
+
+    <div id="tab1" class="tab-content">内容1</div>
+    <div id="tab2" class="tab-content">内容2</div>
+    <div id="tab3" class="tab-content">内容3</div>
+
+   <!-- jquery主程式 -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+   <script>
+    $('.tab-link>a').on('click',function(){
+        $(this).addClass('active')
+        $(this).siblings().removeClass('active')
+        // console.log($(this).attr('href'))
+        $($(this).attr('href')).addClass('active')
+        $($(this).attr('href')).siblings().removeClass('active')
+    })
+   </script>
+
+
+</body>
+
+</html>

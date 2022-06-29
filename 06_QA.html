@@ -9,6 +9,7 @@
     <style>
         .question {
             position: relative;
+
         }
 
         .question-content {
@@ -18,28 +19,41 @@
             line-height: 20px;
             padding: 10px 8px;
             cursor: pointer;
+            /* transform: opacity .4s, transform .5s; */
+        }
+
+        .question-content.active .icon-arrow {
+            transform: rotate(180deg);
+        }
+
+        .question-content.active .answer {
+            display: block;
+            /* transform: opacity .4s, transform .5s; */
         }
 
         .icon-arrow {
+            transition: .6s;
             position: absolute;
             width: 20px;
             height: 20px;
             background-color: rgb(222, 249, 242);
             border: 1px solid rgb(153, 192, 246);
-            border-radius: 3px;            
+            border-radius: 3px;
             right: -5px;
             top: -5px;
-            text-align: center
-            ;
+            text-align: center;
         }
 
         .answer {
-            display: block;
+            display: none;
         }
     </style>
 </head>
 
 <body>
+    <H1>FAQ練習</H1>
+    <h3>隱藏選單、箭頭製作、Jquery效果
+    </h3>
     <div class="container">
         <!-- .question-content*5>.question{q$$}>.icon-arrow^.answer{a$$} -->
         <div class="question-content">
@@ -56,27 +70,6 @@
             </div>
             <div class="answer">a02</div>
         </div>
-        <div class="question-content">
-            <div class="question">
-                q03
-                <div class="icon-arrow"><i class="fa-solid fa-angles-down"></i></div>
-            </div>
-            <div class="answer">a03</div>
-        </div>
-        <div class="question-content">
-            <div class="question">
-                q04
-                <div class="icon-arrow"><i class="fa-solid fa-angles-down"></i></div>
-            </div>
-            <div class="answer">a04</div>
-        </div>
-        <div class="question-content">
-            <div class="question">
-                q05
-                <div class="icon-arrow"><i class="fa-solid fa-angles-down"></i></div>
-            </div>
-            <div class="answer">a05</div>
-        </div>
     </div>
 
     <!-- jquery主程式 -->
@@ -84,7 +77,10 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <script>
-
+        $('.question-content').on('click', function () {
+            $(this).toggleClass('active') // 選取目標對象後，反復增加其效果（CSS自定）
+            $(this).siblings().removeClass('active') //選取目標對象後，其他子層移除效果
+        }) //.question-content end
 
     </script>
 </body>
