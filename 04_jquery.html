@@ -6,26 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        ul>li.active {
+            color: red;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 3px;
+            border-color: black;
+            ;
+        }
+    </style>
 </head>
 
 <body>
-<p>尕佈</p>
+    <p>尕佈</p>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
 
-
-
-
-
-
-
+    <a id="btn-box-switch" href="javascript:;">點擊顯示/隱藏按鈕</a>
+    <div class="box">點擊</div>
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-
     <script>
+        // $('ul>li').addClass('active')
+        $('ul>li').on('click', addRedText)
 
+        function addRedText() {
+            $(this).toggleClass('active')
+        } //addRedTest end
 
+        $('#btn-box-switch').on('click', function () { $('.box').fadeToggle() }) //#btn-box-switch end
 
 
     </script>
